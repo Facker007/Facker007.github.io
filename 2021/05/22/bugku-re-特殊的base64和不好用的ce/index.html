@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="bugku, re" />
   
   <meta name="description" content="1.特殊的base64确实是特殊的base64，换表base64有一串末尾为&#x3D;&#x3D;的字符串，还给了一串64位的表。就判断是base64换表了。 两个脚本都是换表的base64解法。 12345import base64str1 &#x3D; &quot;mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI&#x3D;&#x3D;&quot;string1 &#x3D; &quot;AaBbCcDdEeFfGgHhI">
 <meta property="og:type" content="article">
@@ -23,9 +23,11 @@
 <meta property="og:description" content="1.特殊的base64确实是特殊的base64，换表base64有一串末尾为&#x3D;&#x3D;的字符串，还给了一串64位的表。就判断是base64换表了。 两个脚本都是换表的base64解法。 12345import base64str1 &#x3D; &quot;mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI&#x3D;&#x3D;&quot;string1 &#x3D; &quot;AaBbCcDdEeFfGgHhI">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-05-22T14:30:32.000Z">
-<meta property="article:modified_time" content="2021-05-22T14:45:59.834Z">
+<meta property="article:published_time" content="2021-05-22T14:30:00.000Z">
+<meta property="article:modified_time" content="2021-05-24T12:28:39.485Z">
 <meta property="article:author" content="Facker007">
+<meta property="article:tag" content="bugku">
+<meta property="article:tag" content="re">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -123,7 +125,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            817
+                            1239
                         
                         字
                         
@@ -132,7 +134,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1621694759834"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1621859319485"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
@@ -142,7 +144,16 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">table = <span class="string">&#x27;AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+&#x27;</span></span><br><span class="line">table2 = <span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span></span><br><span class="line">tmp = <span class="string">&#x27;mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI&#x27;</span></span><br><span class="line">tmp2 = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tmp:</span><br><span class="line">	index = table.index(i)</span><br><span class="line">	tmp2 += table2[index]</span><br><span class="line">print(base64.b64decode(tmp2+<span class="string">&#x27;==&#x27;</span>))</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="2-不好用的ce"><a href="#2-不好用的ce" class="headerlink" title="2.不好用的ce"></a>2.不好用的ce</h3><p>找到开始的语句，直接用r将十六进制转成字符串就可</p>
+<h3 id="2-不好用的ce"><a href="#2-不好用的ce" class="headerlink" title="2.不好用的ce"></a>2.不好用的ce</h3><p>1.用网上的脚本vbs依次点击到1w次，或者自己写个按键精灵<br>自己控制好次数，快到就要移开光标，自己点到1w<br><img src="3.png" alt="3.png" title="vbs脚本"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Set objShell &#x3D; CreateObject(&quot;Wscript.Shell&quot;)</span><br><span class="line">dim counter</span><br><span class="line">counter&#x3D;1</span><br><span class="line">do while counter&lt;20</span><br><span class="line">objShell.SendKeys &quot;&#123;ENTER&#125;&quot;   </span><br><span class="line">counter&#x3D;counter+1           </span><br><span class="line">loop</span><br></pre></td></tr></table></figure>
+<p>2.od边运行边调试</p>
+<p>找到第一串字符串，因为“点击一万次”是第一个窗体的，后面的字符串才是主程序里的。<br><img src="4.png" alt="4.png" title="od中文搜索引擎"></p>
+<p>把文中所有的跳转都下上断点(F2)。<br><img src="5.png" alt="5.png" title="下断点"></p>
+<p>看到了je的大跳转已实现，判断就是主循环。<br><img src="6.png" alt="6.png" title="je大跳转"></p>
+<p>开始运行<br><img src="7.png" alt="7.png" title="代码运行"></p>
+<p>更改为jnz或者直接nop掉，使其跳转未实现，继续开始就能输出flag<br><img src="8.png" alt="8.png" title="更改代码，继续运行"></p>
+<p>最后取的代码看起来像base64，其实是base58<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/MikeCoke/article/details/105512385">base编码家族区别</a></p>
+<p><img src="9.png" alt="9.png" title="base家族区别"><br>解密得到flag{c1icktimes}</p>
 <hr>
 
             </div>
@@ -232,10 +243,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        
+                        <a class="tag-none-link" href="/tags/bugku/" rel="tag">bugku</a>, <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-22</span>
+                    <span>最后编辑：2021-05-24</span>
                     </div>
                 </div>
             </footer>
