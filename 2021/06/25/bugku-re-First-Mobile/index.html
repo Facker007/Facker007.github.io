@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/a.jpg">
-  <title>bugku-re-signin | Facker007's blog</title>
+  <title>bugku-re-First_Mobile | Facker007's blog</title>
   <meta name="author" content="Facker007" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,21 +13,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="bugku, re" />
+    <meta name="keywords" content="" />
   
-  <meta name="description" content="apk直接拖进jeb。按q反编译成java语言，方便解读。 下面那个OnCreate是按钮被点击的事件，会把你输入的那个窗口里的那个字符串当作参数传给checkPassword里去。getflag返回的就是资源ID对应的字符串。而checkPassword就是把getflag返回的字符串进行反转，在进行base64加密。PS：这里的jeb是3.1版本的，直接给出了相应资源ID对应的字符串。 没给出">
+  <meta name="description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bugku-re-signin">
-<meta property="og:url" content="http://example.com/2021/05/11/bugku-re-signin/index.html">
+<meta property="og:title" content="bugku-re-First_Mobile">
+<meta property="og:url" content="http://example.com/2021/06/25/bugku-re-First-Mobile/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
-<meta property="og:description" content="apk直接拖进jeb。按q反编译成java语言，方便解读。 下面那个OnCreate是按钮被点击的事件，会把你输入的那个窗口里的那个字符串当作参数传给checkPassword里去。getflag返回的就是资源ID对应的字符串。而checkPassword就是把getflag返回的字符串进行反转，在进行base64加密。PS：这里的jeb是3.1版本的，直接给出了相应资源ID对应的字符串。 没给出">
+<meta property="og:description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-05-11T14:40:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T14:19:18.917Z">
+<meta property="article:published_time" content="2021-06-25T05:35:04.000Z">
+<meta property="article:modified_time" content="2021-06-26T11:37:52.667Z">
 <meta property="article:author" content="Facker007">
-<meta property="article:tag" content="bugku">
-<meta property="article:tag" content="re">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -115,17 +113,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">bugku-re-signin</h1>
+                <h1 class="kratos-entry-title text-center">bugku-re-First_Mobile</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-05-11
+                        <i class="fa fa-calendar"></i> 2021-06-25
                         <i class="fa fa-folder"></i> 分类 
                         <i class="fa fa-user"></i> 作者 Facker007
                         <i class="fa fa-edit"></i> 
                         
                         
-                            273
+                            895
                         
                         字
                         
@@ -134,16 +132,24 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1621520358917"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1624707472667"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p>apk直接拖进jeb。按q反编译成java语言，方便解读。<br><img src="1.png" alt="1.png" title="jeb未解析成java前"></p>
-<p>下面那个OnCreate是按钮被点击的事件，会把你输入的那个窗口里的那个字符串当作参数传给checkPassword里去。getflag返回的就是资源ID对应的字符串。而checkPassword就是把getflag返回的字符串进行反转，在进行base64加密。<br>PS：这里的jeb是3.1版本的，直接给出了相应资源ID对应的字符串。<br><img src="2.png" alt="2.png" title="jeb解析成java后"></p>
-<p>没给出对应字符串，用apk改之理直接打开，全局搜索资源ID对应的16进制对应的字符串name<br><img src="3.png" alt="3.png" title="寻找资源ID"></p>
-<p>在全局搜索字符串name<br><img src="4.png" alt="4.png" title="资源名的内容"></p>
-<p>python脚本解决<br><img src="sign-up-1.png" alt="sign-up-1.png" title="写脚本解决了"></p>
-<p>成功截图<br><img src="success.png" alt="success.png" title="成功"></p>
+                <p>直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查<br><img src="1.png" alt="1.png" title="主函数mainactivity"></p>
+<p>跟到encode里</p>
+<p>input是接收str转成的数组<br>b是已经有的数组<br>temp是空的16位的数组</p>
+<p>在经过了运算之后temp[i]=((input[i]+b[i])%61)*2-i<br>如果temp和str还相等，就返回true，输出correct。</p>
+<p><img src="2.png" alt="2.png" title="encode函数"></p>
+<hr>
+<p>写个脚本<br>这个脚本是直接跑的，把每一位依次比较，正确就转成字母输出<br>这里的80可以往大里改，算是爆破出来的<br><a target="_blank" rel="noopener" href="https://hnightanimal.top/2019/06/24/My_first_andriod_reverse/">参见</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str1=[<span class="number">23</span>, <span class="number">22</span>, <span class="number">26</span>, <span class="number">26</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">26</span>, <span class="number">27</span>, <span class="number">28</span>, <span class="number">30</span>, <span class="number">30</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">0x20</span>, <span class="number">0x20</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">80</span>):</span><br><span class="line">        <span class="keyword">if</span>((j+str1[i])%<span class="number">61</span>)*<span class="number">2</span>-i==j:</span><br><span class="line">            print(<span class="built_in">chr</span>(j),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="3.png" alt="3.png" title="脚本跑出"></p>
+<hr>
+<p>另一种脚本的写法<br>也是爆破的，生成了所以的大小写和数字，一位一位爆破。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39563369/article/details/96991884">参见</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line">b = [ <span class="number">0x17</span>, <span class="number">0x16</span>,<span class="number">0x1a</span>,<span class="number">0x1a</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x1a</span>,<span class="number">0x1b</span>,<span class="number">0x1c</span>,<span class="number">0x1e</span>,<span class="number">0x1e</span>,<span class="number">0x1d</span>,<span class="number">0x1e</span>,<span class="number">0x20</span>,<span class="number">0x20</span>]</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line">v6=<span class="number">16</span></span><br><span class="line">tmp=<span class="string">&quot;&quot;</span></span><br><span class="line">strall=string.ascii_letters+string.digits <span class="comment">#生成所有的大小写字符和数字。给下面循环中</span></span><br><span class="line"><span class="keyword">while</span> i&lt;v6:</span><br><span class="line">   <span class="keyword">for</span> a <span class="keyword">in</span> strall:</span><br><span class="line">       tmp1 = <span class="built_in">ord</span>(a)</span><br><span class="line">       tmp2 = ((<span class="built_in">ord</span>(a)+b[i])%(<span class="number">0x3d</span>))*<span class="number">2</span>-i    <span class="comment">#0x3d=十进制的61</span></span><br><span class="line">       <span class="keyword">if</span> tmp1==tmp2:</span><br><span class="line">           tmp+=a</span><br><span class="line">           i+=<span class="number">1</span></span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">continue</span></span><br><span class="line">print(tmp)</span><br></pre></td></tr></table></figure>
+<p><img src="4.png" alt="4.png" title="另一种方法的脚本跑出"></p>
 
             </div>
             
@@ -197,7 +203,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/05/11/bugku-re-signin/",
+                text: "http://example.com/2021/06/25/bugku-re-First-Mobile/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -209,10 +215,12 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/05/11/bugku-re-signin/";
-            const title         = "「bugku-re-signin」";
-            const excerpt       = `apk直接拖进jeb。按q反编译成java语言，方便解读。
-下面那个OnCreate是按钮被点击的事件，会把你输入的那个窗口里的那个字符串当作参数传给checkPassword里去。getflag返回的就是资源ID对应的字符串。而ch...`;
+            const hostUrl       = "http://example.com/2021/06/25/bugku-re-First-Mobile/";
+            const title         = "「bugku-re-First_Mobile」";
+            const excerpt       = `直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查
+跟到encode里
+input是接收str转成的数组b是已经有的数组temp是空的16位的数组
+在经过了运算之后temp[i]=((inp...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -231,10 +239,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/bugku/" rel="tag">bugku</a>, <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>
+                        
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-20</span>
+                    <span>最后编辑：2021-06-26</span>
                     </div>
                 </div>
             </footer>
@@ -243,13 +251,9 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" bugku-crypto-合集" href="/2021/05/08/bugku-crypto-合集/">&lt; 上一篇</a>
+                    <a title=" bugku-re-mobile1和mobile2" href="/2021/05/27/bugku-re-mobile1和mobile2/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" bugku-re-游戏过关" href="/2021/05/18/bugku-re-游戏过关/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
