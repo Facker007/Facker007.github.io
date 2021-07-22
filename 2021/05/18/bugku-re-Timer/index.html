@@ -15,14 +15,16 @@
   
     <meta name="keywords" content="bugku, re" />
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="直奔主题,jeb打开。看反汇编mainactivity的代码。直接看到flag结果的地方判断如果beg-now(当前时间)&lt;&#x3D;0就输出正确的flag  往上看回调的mainactivity，beg生成就是当前时间+200000s。beg-now就相当于是200000s一直减当前过去的秒数。就是倒计时。 上面的flag输出的地方又涉及到了k。在下文k的计算又收到了is2函数的影响。直接跟进去看">
+<meta property="og:type" content="article">
 <meta property="og:title" content="bugku-re-Timer">
 <meta property="og:url" content="http://example.com/2021/05/18/bugku-re-Timer/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
+<meta property="og:description" content="直奔主题,jeb打开。看反汇编mainactivity的代码。直接看到flag结果的地方判断如果beg-now(当前时间)&lt;&#x3D;0就输出正确的flag  往上看回调的mainactivity，beg生成就是当前时间+200000s。beg-now就相当于是200000s一直减当前过去的秒数。就是倒计时。 上面的flag输出的地方又涉及到了k。在下文k的计算又收到了is2函数的影响。直接跟进去看">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
 <meta property="article:published_time" content="2021-05-18T15:08:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T14:19:37.396Z">
+<meta property="article:modified_time" content="2021-07-22T12:59:36.000Z">
 <meta property="article:author" content="Facker007">
 <meta property="article:tag" content="bugku">
 <meta property="article:tag" content="re">
@@ -123,7 +125,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            0
+                            ~2.18K
                         
                         字
                         
@@ -132,11 +134,26 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1621520377396"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1626958776000"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                
+                <p>直奔主题,jeb打开。看反汇编mainactivity的代码。直接看到flag结果的地方<br>判断如果beg-now(当前时间)&lt;=0就输出正确的flag</p>
+<p><img src="1.png" alt="1" title="flag输出结果条件"></p>
+<p>往上看回调的mainactivity，beg生成就是当前时间+200000s。beg-now就相当于是200000s一直减当前过去的秒数。就是倒计时。<br><img src="2.png" alt="2" title="beg生成条件"></p>
+<p>上面的flag输出的地方又涉及到了k。在下文k的计算又收到了is2函数的影响。直接跟进去看is2函数。可以自己写脚本计算k。把is2函数扒拉下来，在给他传参数。这里的脚本是网上copy来的。is2那边应该是老版本jeb反汇编的结果。我这里是新版本，就没有改脚本了</p>
+<p>脚本中就是把time当做参数传给了is2。让is2来计算。如果返回的是true，就让k+100。如果返回false，k就-1。最后200000次之后。k的值被计算出来了<br><img src="3.png" alt="3" title="脚本和代码对比"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">is2</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> v1 = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(n &gt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(n % <span class="number">2</span> != <span class="number">0</span> &amp;&amp; n % <span class="number">3</span> != <span class="number">0</span>) &#123;         <span class="comment">//÷2和÷3都有余才会继续执行下面的代码</span></span><br><span class="line">                <span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">                <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(i * i &lt;= n) &#123;</span><br><span class="line">                        <span class="keyword">if</span>(n % i != <span class="number">0</span> &amp;&amp; n % (i + <span class="number">2</span>) != <span class="number">0</span>) &#123;</span><br><span class="line">                            i += <span class="number">6</span>;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line"> </span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> v1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            v1 = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            v1 = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> v1;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> time = <span class="number">200000</span>;</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (time &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (is2(time)) &#123;</span><br><span class="line">                k += <span class="number">100</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                k--;</span><br><span class="line">            &#125;</span><br><span class="line">            time--;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>计算出k的值是1616384。打开android killer修改smail代码<br><img src="4.png" alt="4" title="脚本执行结果"></p>
+<p>进入主函数入口。搜索stringFromJNI2，直接定位输出k处，修改判断beg-now的代码。以及直接给定k的值<br><img src="5.png" alt="5" title="aker"></p>
+<p>修改变量k的值，<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9b52db44593d">iget</a>，把k存在了v3寄存器里。寄存器用v开头数字结尾的符号来表示</p>
+<p><code>其格式为：iget 目标寄存器 源对象 变量签名。</code></p>
+<p>我们直接用const把1616384赋值给v3。<br>const v3,1616384<br><img src="6.png" alt="6" title="修改k的值"></p>
+<p>这里把最后的k值设置为了执行200000次后的正确值之后。<br>但是并没有修改beg或者now的值。beg-now的判断。还是不成立的。不会输出flag。所以我们要把≤改成＞。<br>但又因为代码里是相反的就把if-gtz(＞)改为if-lez(≤)。<br><img src="7.png" alt="7" title="修改判断条件"></p>
+<p>编译签名，生成最后的apk。模拟器运行。一定要签名的。默认编译可能不签名，所以模拟器安装不上？<br><img src="8.png" alt="8" title="改完后编译"></p>
+<p><img src="9.png" alt="9" title="flag结果"></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>参考<br>1.<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-926079-1-1.html">https://www.52pojie.cn/thread-926079-1-1.html</a><br>2.<a target="_blank" rel="noopener" href="https://blog.csdn.net/cf260469080/article/details/106446078">https://blog.csdn.net/cf260469080/article/details/106446078</a><br>3.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaochaofang/p/14455925.html">https://www.cnblogs.com/xiaochaofang/p/14455925.html</a></p>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -203,7 +220,9 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2021/05/18/bugku-re-Timer/";
             const title         = "「bugku-re-Timer」";
-            const excerpt       = ``;
+            const excerpt       = `直奔主题,jeb打开。看反汇编mainactivity的代码。直接看到flag结果的地方判断如果beg-now(当前时间)&lt;=0就输出正确的flag
+
+往上看回调的mainactivity，beg生成就是当前时间+200000s...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -225,7 +244,7 @@
                         <a class="tag-none-link" href="/tags/bugku/" rel="tag">bugku</a>, <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-20</span>
+                    <span>最后编辑：2021-07-22</span>
                     </div>
                 </div>
             </footer>
