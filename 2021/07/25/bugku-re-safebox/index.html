@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/a.jpg">
-  <title>bugku-re-First_Mobile | Facker007's blog</title>
+  <title>bugku-re-safebox | Facker007's blog</title>
   <meta name="author" content="Facker007" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,21 +13,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="bugku, re" />
+    <meta name="keywords" content="" />
   
-  <meta name="description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
+  <meta name="description" content="先模拟器打开软件查看界面，只有一个地方可以输入，其他地方应该是点不了。输入很多次都是停止运行 jeb打开先看mainactivility。看代码，在判断flag&#x3D;1的时候可输出flag。 Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()这句其实就是接受那个输入框接受输入的值在转成int类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bugku-re-First_Mobile">
-<meta property="og:url" content="http://example.com/2021/06/25/bugku-re-First-Mobile/index.html">
+<meta property="og:title" content="bugku-re-safebox">
+<meta property="og:url" content="http://example.com/2021/07/25/bugku-re-safebox/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
-<meta property="og:description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
+<meta property="og:description" content="先模拟器打开软件查看界面，只有一个地方可以输入，其他地方应该是点不了。输入很多次都是停止运行 jeb打开先看mainactivility。看代码，在判断flag&#x3D;1的时候可输出flag。 Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()这句其实就是接受那个输入框接受输入的值在转成int类型">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-06-25T05:35:00.000Z">
-<meta property="article:modified_time" content="2021-06-30T12:46:08.513Z">
+<meta property="article:published_time" content="2021-07-25T13:56:24.000Z">
+<meta property="article:modified_time" content="2021-07-26T14:03:40.150Z">
 <meta property="article:author" content="Facker007">
-<meta property="article:tag" content="bugku">
-<meta property="article:tag" content="re">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -115,17 +113,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">bugku-re-First_Mobile</h1>
+                <h1 class="kratos-entry-title text-center">bugku-re-safebox</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-06-25
+                        <i class="fa fa-calendar"></i> 2021-07-25
                         <i class="fa fa-folder"></i> 分类 
                         <i class="fa fa-user"></i> 作者 Facker007
                         <i class="fa fa-edit"></i> 
                         
                         
-                            895
+                            ~3.77K
                         
                         字
                         
@@ -134,24 +132,21 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1625057168513"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1627308220150"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p>直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查<br><img src="1.png" alt="1.png" title="主函数mainactivity"></p>
-<p>跟到encode里</p>
-<p>input是接收str转成的数组<br>b是已经有的数组<br>temp是空的16位的数组</p>
-<p>在经过了运算之后temp[i]=((input[i]+b[i])%61)*2-i<br>如果temp和str还相等，就返回true，输出correct。</p>
-<p><img src="2.png" alt="2.png" title="encode函数"></p>
-<hr>
-<p>写个脚本<br>这个脚本是直接跑的，把每一位依次比较，正确就转成字母输出<br>这里的80可以往大里改，算是爆破出来的<br><a target="_blank" rel="noopener" href="https://hnightanimal.top/2019/06/24/My_first_andriod_reverse/">参见</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str1=[<span class="number">23</span>, <span class="number">22</span>, <span class="number">26</span>, <span class="number">26</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">26</span>, <span class="number">27</span>, <span class="number">28</span>, <span class="number">30</span>, <span class="number">30</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">0x20</span>, <span class="number">0x20</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">80</span>):</span><br><span class="line">        <span class="keyword">if</span>((j+str1[i])%<span class="number">61</span>)*<span class="number">2</span>-i==j:</span><br><span class="line">            print(<span class="built_in">chr</span>(j),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+                <p>先模拟器打开软件查看界面，只有一个地方可以输入，其他地方应该是点不了。输入很多次都是停止运行<br><img src="1.png" alt="1.png" title="模拟器打开界面"></p>
+<p>jeb打开先看mainactivility。<br>看代码，在判断flag=1的时候可输出flag。<br><img src="2.png" alt="2.png" title="看mainactivility"></p>
+<p>Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()这句其实就是接受那个输入框接受输入的值在转成int类型，把接受到的这个变量当成input。改写全局的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public void onClick(View v) &#123;</span><br><span class="line">                if(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &gt; 10000000 &amp;&amp; Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &lt; 0x5F5E0FF) &#123;  &#x2F;&#x2F; id:editText</span><br><span class="line">                    int t &#x3D; 1;</span><br><span class="line">                    int t1 &#x3D; 10000000;</span><br><span class="line">                    int flag &#x3D; 1;</span><br><span class="line">                    if(Math.abs(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; 1000 % 100 - 36) &#x3D;&#x3D; 3 &amp;&amp; Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) % 1000 % 584 &#x3D;&#x3D; 0) &#123;  &#x2F;&#x2F; id:editText</span><br><span class="line">                        int j;</span><br><span class="line">                        for(j &#x3D; 0; j &lt; 4; ++j) &#123;</span><br><span class="line">                            if(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; t % 10 !&#x3D; Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; t1 % 10) &#123;  &#x2F;&#x2F; id:editText</span><br><span class="line">                                flag &#x3D; 0;</span><br><span class="line">                                break;</span><br><span class="line">                            &#125;</span><br><span class="line"></span><br><span class="line">                            t *&#x3D; 10;</span><br><span class="line">                            t1 &#x2F;&#x3D; 10;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        if(flag &#x3D;&#x3D; 1) &#123;</span><br><span class="line">                            ((EditText)this.findViewById(0x7F0B0056)).setText(&quot;NJCTF&#123;&quot; + ((char)(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; 1000000)) + ((char)(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; 10000 % 100)) + ((char)(Integer.parseInt(((EditText)this.findViewById(0x7F0B0056)).getText().toString()) &#x2F; 100 % 100)) + &quot;f4n&#125;&quot;);  &#x2F;&#x2F; id:editText</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>简化代码变成下面这样，方便分析。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(input &gt; <span class="number">10000000</span> &amp;&amp; input &lt; <span class="number">99999999</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> t1 = <span class="number">10000000</span>;</span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(Math.abs(input / <span class="number">1000</span> % <span class="number">100</span> - <span class="number">36</span>) == <span class="number">3</span> &amp;&amp; input % <span class="number">1000</span> % <span class="number">584</span> == <span class="number">0</span>) &#123; </span><br><span class="line">            <span class="keyword">int</span> j;</span><br><span class="line">            <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; ++j) &#123;  </span><br><span class="line">                <span class="keyword">if</span>(input / t % <span class="number">10</span> != input / t1 % <span class="number">10</span>) &#123;  </span><br><span class="line">                    flag = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">    </span><br><span class="line">                t *= <span class="number">10</span>;</span><br><span class="line">                t1 /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="keyword">if</span>(flag == <span class="number">1</span>) &#123;</span><br><span class="line">                input.setText(<span class="string">&quot;NJCTF&#123;&quot;</span> + ((<span class="keyword">char</span>)(input / <span class="number">1000000</span>)) + ((<span class="keyword">char</span>)(input / <span class="number">10000</span> % <span class="number">100</span>)) + ((<span class="keyword">char</span>)(input / <span class="number">100</span> % <span class="number">100</span>)) + <span class="string">&quot;f4n&#125;&quot;</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="3.png" alt="3.png" title="脚本跑出"></p>
-<hr>
-<p>另一种脚本的写法<br>也是爆破的，生成了所以的大小写和数字，一位一位爆破。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39563369/article/details/96991884">参见</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line">b = [ <span class="number">0x17</span>, <span class="number">0x16</span>,<span class="number">0x1a</span>,<span class="number">0x1a</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x1a</span>,<span class="number">0x1b</span>,<span class="number">0x1c</span>,<span class="number">0x1e</span>,<span class="number">0x1e</span>,<span class="number">0x1d</span>,<span class="number">0x1e</span>,<span class="number">0x20</span>,<span class="number">0x20</span>]</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line">v6=<span class="number">16</span></span><br><span class="line">tmp=<span class="string">&quot;&quot;</span></span><br><span class="line">strall=string.ascii_letters+string.digits <span class="comment">#生成所有的大小写字符和数字。给下面循环中</span></span><br><span class="line"><span class="keyword">while</span> i&lt;v6:</span><br><span class="line">   <span class="keyword">for</span> a <span class="keyword">in</span> strall:</span><br><span class="line">       tmp1 = <span class="built_in">ord</span>(a)</span><br><span class="line">       tmp2 = ((<span class="built_in">ord</span>(a)+b[i])%(<span class="number">0x3d</span>))*<span class="number">2</span>-i    <span class="comment">#0x3d=十进制的61</span></span><br><span class="line">       <span class="keyword">if</span> tmp1==tmp2:</span><br><span class="line">           tmp+=a</span><br><span class="line">           i+=<span class="number">1</span></span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">continue</span></span><br><span class="line">print(tmp)</span><br></pre></td></tr></table></figure>
-<p><img src="4.png" alt="4.png" title="另一种方法的脚本跑出"></p>
+<p>可以根据java代码写出python暴力爆破脚本。提交答案。是错误的…..看到别的androidtest类和mainactivity代码相似。<br><img src="3.png" alt="3.png" title="python暴力爆破脚本"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000000</span>,<span class="number">99999999</span>):</span><br><span class="line">    t=<span class="number">1</span>;t1 = <span class="number">10000000</span>;flag = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(i / <span class="number">1000</span> % <span class="number">100</span> - <span class="number">36</span>) == <span class="number">3</span> <span class="keyword">and</span> (i % <span class="number">1000</span>) % <span class="number">584</span> == <span class="number">0</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">4</span>):</span><br><span class="line">            <span class="keyword">if</span> ((i / t) % <span class="number">10</span> != (i / t1) % <span class="number">10</span>):</span><br><span class="line">                flag = <span class="number">0</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            t *= <span class="number">10</span></span><br><span class="line">            t1 /= <span class="number">10</span></span><br><span class="line">        <span class="keyword">if</span>(flag == <span class="number">1</span>):</span><br><span class="line">            print(i)</span><br><span class="line">            print(<span class="string">&quot;NJCTF&#123;&quot;</span> + <span class="built_in">chr</span>(<span class="built_in">int</span>(i / <span class="number">1000000</span>)) + <span class="built_in">chr</span>(<span class="built_in">int</span>(i / <span class="number">10000</span> % <span class="number">100</span>)) + <span class="built_in">chr</span>(<span class="built_in">int</span>(i / <span class="number">100</span> % <span class="number">100</span>)) + <span class="string">&quot;f4n&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>mainfest里可以看到有两个activity，多个Activity可以显示多个不同的界面，setContentView就是设置一个Activity的显示界面，使用setContentView可以在Activity中动态切换显示的View,这样，不需要多个Activity就可以显示不同的界面。<br><img src="4.png" alt="4.png" title="mainfest"></p>
+<p>可以看到明显的调用id值<br><img src="5.png" alt="5.png" title="id值"></p>
 
             </div>
             
@@ -205,7 +200,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/06/25/bugku-re-First-Mobile/",
+                text: "http://example.com/2021/07/25/bugku-re-safebox/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -217,12 +212,11 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/06/25/bugku-re-First-Mobile/";
-            const title         = "「bugku-re-First_Mobile」";
-            const excerpt       = `直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查
-跟到encode里
-input是接收str转成的数组b是已经有的数组temp是空的16位的数组
-在经过了运算之后temp[i]=((inp...`;
+            const hostUrl       = "http://example.com/2021/07/25/bugku-re-safebox/";
+            const title         = "「bugku-re-safebox」";
+            const excerpt       = `先模拟器打开软件查看界面，只有一个地方可以输入，其他地方应该是点不了。输入很多次都是停止运行
+jeb打开先看mainactivility。看代码，在判断flag=1的时候可输出flag。
+Integer.parseInt(((Edit...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -241,10 +235,10 @@ input是接收str转成的数组b是已经有的数组temp是空的16位的数�
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/bugku/" rel="tag">bugku</a>, <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>
+                        
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-06-30</span>
+                    <span>最后编辑：2021-07-26</span>
                     </div>
                 </div>
             </footer>
@@ -253,13 +247,9 @@ input是接收str转成的数组b是已经有的数组temp是空的16位的数�
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" bugku-re-mobile1和mobile2" href="/2021/05/27/bugku-re-mobile1和mobile2/">&lt; 上一篇</a>
+                    <a title=" bugku-re-easy-100" href="/2021/07/23/bugku-re-easy-100/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" bugku-re-NoString" href="/2021/06/30/bugku-re-NoString/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
