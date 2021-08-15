@@ -15,14 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索   找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹  第二关搜自己的生命值。 用nop替换掉在被攻击即可发现生命值不会掉 右键找到改动的地址，然后在攻击与被攻击 往下移，找到偏移量为70的时候，0,1,1。可判断1即代表电脑 aop注入。如果是电脑就血量变为0，实现秒杀  第三关不断调整">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ce-tutorial-games">
 <meta property="og:url" content="http://example.com/2021/08/14/ce-tutorial-games/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
+<meta property="og:description" content="第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索   找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹  第二关搜自己的生命值。 用nop替换掉在被攻击即可发现生命值不会掉 右键找到改动的地址，然后在攻击与被攻击 往下移，找到偏移量为70的时候，0,1,1。可判断1即代表电脑 aop注入。如果是电脑就血量变为0，实现秒杀  第三关不断调整">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
 <meta property="article:published_time" content="2021-08-14T13:28:21.000Z">
-<meta property="article:modified_time" content="2021-08-14T13:28:21.285Z">
+<meta property="article:modified_time" content="2021-08-15T03:50:15.523Z">
 <meta property="article:author" content="Facker007">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
@@ -121,7 +123,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            0
+                            358
                         
                         字
                         
@@ -130,11 +132,29 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1628947701285"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1628999415523"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                
+                <h3 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h3><p>这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索<br><img src="1-1.png" alt="1-1.png"></p>
+<p><img src="1-2.png" alt="1-2.png"></p>
+<p><img src="1-3.png" alt="1-3.png"></p>
+<p>找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹<br><img src="1-4.png" alt="1-4.png"></p>
+<hr>
+<h3 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h3><p>搜自己的生命值。<br><img src="2-1.png" alt="2-1.png"></p>
+<p>用nop替换掉在被攻击即可发现生命值不会掉<br><img src="2-2.png" alt="2-2.png"></p>
+<p>右键找到改动的地址，然后在攻击与被攻击<br><img src="2-3.png" alt="2-3.png"></p>
+<p>往下移，找到偏移量为70的时候，0,1,1。可判断1即代表电脑<br><img src="2-4.png" alt="2-4.png"></p>
+<p>aop注入。如果是电脑就血量变为0，实现秒杀<br><img src="2-5.png" alt="2-5.png"></p>
+<hr>
+<h3 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h3><p>不断调整位置，搜x的坐标（浮点）。再在内存区域旁边找到y的坐标<br><img src="3-1.png" alt="3-1.png"></p>
+<p>转成四字节的decimal，被杀的时候可以发现有两个0和1的转换。<br><img src="3-2.png" alt="3-2.png"></p>
+<p>拖下来，发现有个类似假死，有动画，但没死。<br><img src="3-3.png" alt="3-3.png"></p>
+<p>被改写的地址，反汇编-&gt;断点,跟踪10000条<br><img src="3-4.png" alt="3-4.png"></p>
+<p>折叠起我们进来看到的代码<br><img src="3-5.png" alt="3-5.png"></p>
+<p>这一条即是我们被碰撞时的代码。<br><img src="3-6.png" alt="3-6.png"></p>
+<p>je改为jmp，即可实现碰撞不死。<br><img src="3-7.png" alt="3-7.png"></p>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -201,7 +221,14 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2021/08/14/ce-tutorial-games/";
             const title         = "「ce-tutorial-games」";
-            const excerpt       = ``;
+            const excerpt       = `第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索
+
+
+找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹
+
+第二关搜自己的生命值。
+用nop替换掉在被攻击即可发现生命值不会掉
+...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -223,7 +250,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-08-14</span>
+                    <span>最后编辑：2021-08-15</span>
                     </div>
                 </div>
             </footer>
