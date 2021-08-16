@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="CE" />
   
   <meta name="description" content="第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索   找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹  第二关搜自己的生命值。 用nop替换掉在被攻击即可发现生命值不会掉 右键找到改动的地址，然后在攻击与被攻击 往下移，找到偏移量为70的时候，0,1,1。可判断1即代表电脑 aop注入。如果是电脑就血量变为0，实现秒杀  第三关不断调整">
 <meta property="og:type" content="article">
@@ -23,9 +23,10 @@
 <meta property="og:description" content="第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索   找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹  第二关搜自己的生命值。 用nop替换掉在被攻击即可发现生命值不会掉 右键找到改动的地址，然后在攻击与被攻击 往下移，找到偏移量为70的时候，0,1,1。可判断1即代表电脑 aop注入。如果是电脑就血量变为0，实现秒杀  第三关不断调整">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-08-14T13:28:21.000Z">
-<meta property="article:modified_time" content="2021-08-15T03:50:15.523Z">
+<meta property="article:published_time" content="2021-08-14T13:28:00.000Z">
+<meta property="article:modified_time" content="2021-08-16T12:38:58.290Z">
 <meta property="article:author" content="Facker007">
+<meta property="article:tag" content="CE">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -132,7 +133,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1628999415523"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1629117538290"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
@@ -247,10 +248,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        
+                        <a class="tag-none-link" href="/tags/CE/" rel="tag">CE</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-08-15</span>
+                    <span>最后编辑：2021-08-16</span>
                     </div>
                 </div>
             </footer>
@@ -262,6 +263,10 @@
                     <a title=" ce-turorial1-9" href="/2021/08/13/ce-tutorial1-9/">&lt; 上一篇</a>
                 </div>
                 
+                
+                <div class="nav-next clearfix">
+                    <a title=" vulnhub-Hacksudo Alien" href="/2021/08/15/vulnhub-Hacksudo-Alien/">下一篇 &gt;</a>
+                </div>
                 
             </nav>
         
@@ -296,7 +301,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/CE/" style="font-size: 0.6em;">CE</a> <a href="/tags/bugku/" style="font-size: 0.8em;">bugku</a> <a href="/tags/buuctf/" style="font-size: 0.6em;">buuctf</a> <a href="/tags/buuctf-misc/" style="font-size: 0.6em;">buuctf-misc</a> <a href="/tags/crypto/" style="font-size: 0.6em;">crypto</a> <a href="/tags/misc/" style="font-size: 0.67em;">misc</a> <a href="/tags/noi-oj/" style="font-size: 0.6em;">noi-oj</a> <a href="/tags/pip%E6%BA%90-docker%E6%BA%90/" style="font-size: 0.6em;">pip源&docker源</a> <a href="/tags/pwn/" style="font-size: 0.6em;">pwn</a> <a href="/tags/re/" style="font-size: 0.73em;">re</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" style="font-size: 0.6em;">关于我</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B22021%E5%86%AC%E4%BB%A4%E8%90%A5/" style="font-size: 0.6em;">穿山甲2021冬令营</a> <a href="/tags/%E9%A3%9E%E8%A1%8C%E5%99%A8/" style="font-size: 0.6em;">飞行器</a>
+        <a href="/tags/CE/" style="font-size: 0.67em;">CE</a> <a href="/tags/bugku/" style="font-size: 0.8em;">bugku</a> <a href="/tags/buuctf/" style="font-size: 0.6em;">buuctf</a> <a href="/tags/buuctf-misc/" style="font-size: 0.6em;">buuctf-misc</a> <a href="/tags/crypto/" style="font-size: 0.6em;">crypto</a> <a href="/tags/misc/" style="font-size: 0.67em;">misc</a> <a href="/tags/noi-oj/" style="font-size: 0.6em;">noi-oj</a> <a href="/tags/pip%E6%BA%90-docker%E6%BA%90/" style="font-size: 0.6em;">pip源&docker源</a> <a href="/tags/pwn/" style="font-size: 0.6em;">pwn</a> <a href="/tags/re/" style="font-size: 0.73em;">re</a> <a href="/tags/vulnhub/" style="font-size: 0.6em;">vulnhub</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" style="font-size: 0.6em;">关于我</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B22021%E5%86%AC%E4%BB%A4%E8%90%A5/" style="font-size: 0.6em;">穿山甲2021冬令营</a> <a href="/tags/%E9%A3%9E%E8%A1%8C%E5%99%A8/" style="font-size: 0.6em;">飞行器</a>
       </div>
   </aside>
 
@@ -307,6 +312,12 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2021/08/15/vulnhub-Hacksudo-Alien/"><i class="fa  fa-book"></i> vulnhub-Hacksudo Alien</a>
+            
+          
         
           
           
@@ -333,11 +344,7 @@
           
         
           
-          
-            <a class="list-group-item" href="/2021/07/25/bugku-re-safebox/"><i class="fa  fa-book"></i> bugku-re-safebox</a>
             
-          
-        
           
             
           
