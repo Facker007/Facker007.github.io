@@ -113,6 +113,48 @@
                         <div class="kratos-entry-border-new clearfix">
                             
                             <div class="kratos-entry-thumb-new">
+                                <a href="/2021/09/02/vulnhub-HMS-1/">
+                                    
+                                        <img class="kratos-entry-thumb-new-img">
+                                    
+                                </a>
+                            </div>
+                            <div class="kratos-post-inner-new">
+                                <header class="kratos-entry-header-new">
+                                        
+                                    <h2 class="kratos-entry-title-new"><a href="/2021/09/02/vulnhub-HMS-1/">vulnhub HMS?: 1</a>
+                                </header>
+                                <div class="kratos-entry-content-new">
+                                    <p>
+                                        
+                                            netdiscover和nmap开路
+12netdiscover -i eth0nmap -p- -sV -T5 192.168.0.102
+
+访问7080端口,源代码查看作者信息，去找cms的source code
+read me里...
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                            <footer class="kratos-post-meta-new">
+                                <span class="pull-left">
+                                    <a><i class="fa fa-calendar"></i></a><a>2021-09-02</a>
+                                    <a><i class="fa fa-tags"></i></a>
+                                    <a class="tag-none-link" href="/tags/vulnhub/" rel="tag">vulnhub</a>
+                                </span>
+                                <span class="pull-right">
+                                    <a class="read-more" href="/2021/09/02/vulnhub-HMS-1/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+                                </span>
+                            </footer>
+                        </div>
+                    </article>
+                
+            
+                
+                    <article class="kratos-hentry clearfix">
+                        <div class="kratos-entry-border-new clearfix">
+                            
+                            <div class="kratos-entry-thumb-new">
                                 <a href="/2021/08/31/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B1%BB%E5%85%A8%E8%A7%A3%EF%BC%88Writeup%EF%BC%89/">
                                     
                                         <img class="kratos-entry-thumb-new-img">
@@ -482,51 +524,6 @@ curl把备份文件读出来，查看到数据库的账号密码
                     </article>
                 
             
-                
-                    <article class="kratos-hentry clearfix">
-                        <div class="kratos-entry-border-new clearfix">
-                            
-                            <div class="kratos-entry-thumb-new">
-                                <a href="/2021/08/14/ce-tutorial-games/">
-                                    
-                                        <img class="kratos-entry-thumb-new-img">
-                                    
-                                </a>
-                            </div>
-                            <div class="kratos-post-inner-new">
-                                <header class="kratos-entry-header-new">
-                                        
-                                    <h2 class="kratos-entry-title-new"><a href="/2021/08/14/ce-tutorial-games/">ce-tutorial-games</a>
-                                </header>
-                                <div class="kratos-entry-content-new">
-                                    <p>
-                                        
-                                            第一关这题一开始搜的是子弹的数量，但并不是。发现他是已用掉的子弹计数的。故直接搜索
-
-
-找改写的地址，ctrl+a,aop注入，注释掉add那行。即可实现无限子弹
-
-第二关搜自己的生命值。
-用nop替换掉在被攻击即可发现生命值不会掉
-...
-                                        
-                                    </p>
-                                </div>
-                            </div>
-                            <footer class="kratos-post-meta-new">
-                                <span class="pull-left">
-                                    <a><i class="fa fa-calendar"></i></a><a>2021-08-14</a>
-                                    <a><i class="fa fa-tags"></i></a>
-                                    <a class="tag-none-link" href="/tags/CE/" rel="tag">CE</a>
-                                </span>
-                                <span class="pull-right">
-                                    <a class="read-more" href="/2021/08/14/ce-tutorial-games/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                
-            
             
             
                 <div class='text-center pagination'>
@@ -577,6 +574,12 @@ curl把备份文件读出来，查看到数据库的账号密码
         
           
           
+            <a class="list-group-item" href="/2022/01/02/buuctf-misc%E7%B3%BB%E5%88%972-33-48/"><i class="fa  fa-book"></i> buuctf-misc系列2(33-48)</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2021/12/21/crypto%E4%B9%8B%E6%9B%BC%E5%BD%BB%E6%96%AF%E7%89%B9%E7%BC%96%E7%A0%81/"><i class="fa  fa-book"></i> crypto之曼彻斯特编码</a>
             
           
@@ -600,11 +603,7 @@ curl把备份文件读出来，查看到数据库的账号密码
           
         
           
-          
-            <a class="list-group-item" href="/2021/09/19/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2-WebShell%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E6%BA%AF%E6%BA%90%E7%B3%BB%E5%88%97%E5%85%A8%E8%A7%A3%EF%BC%88writeup%EF%BC%89/"><i class="fa  fa-book"></i> 墨者学院-WebShell代码分析溯源系列全解（writeup）</a>
             
-          
-        
           
             
           
@@ -727,7 +726,7 @@ curl把备份文件读出来，查看到数据库的账号密码
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2021 Facker007 版权所有.</li>
+                            <li>&copy; 2022 Facker007 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
