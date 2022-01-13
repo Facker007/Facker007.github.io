@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="re, shark恒" />
   
-  <meta name="description" content="esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调试的硬件断点跟随	4.F9-&gt;F8-&gt;F8	5.分析-&gt;从模块中删除分析	6.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）第二种：	1">
+  <meta name="description" content="esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随-&gt;选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调试-&gt;硬件断点-&gt;跟随	4.F9-&gt;F8-&gt;F8	5.分析-&gt;从模块中删除分析	6.右键ollydump脱壳调试进程（重建输入表一个，不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="esp定律及大小自校验">
 <meta property="og:url" content="http://example.com/2022/01/11/esp%E5%AE%9A%E5%BE%8B%E5%8F%8A%E5%A4%A7%E5%B0%8F%E8%87%AA%E6%A0%A1%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
-<meta property="og:description" content="esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调试的硬件断点跟随	4.F9-&gt;F8-&gt;F8	5.分析-&gt;从模块中删除分析	6.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）第二种：	1">
+<meta property="og:description" content="esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随-&gt;选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调试-&gt;硬件断点-&gt;跟随	4.F9-&gt;F8-&gt;F8	5.分析-&gt;从模块中删除分析	6.右键ollydump脱壳调试进程（重建输入表一个，不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
 <meta property="article:published_time" content="2022-01-11T13:01:00.000Z">
-<meta property="article:modified_time" content="2022-01-11T13:03:37.966Z">
+<meta property="article:modified_time" content="2022-01-13T11:07:44.159Z">
 <meta property="article:author" content="Facker007">
 <meta property="article:tag" content="re">
 <meta property="article:tag" content="shark恒">
@@ -125,7 +125,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            318
+                            622
                         
                         字
                         
@@ -134,13 +134,24 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1641906217966"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1642072064159"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <h3 id="esp定律脱壳"><a href="#esp定律脱壳" class="headerlink" title="esp定律脱壳"></a>esp定律脱壳</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">第一种方法：</span><br><span class="line">	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的</span><br><span class="line">	2.esp右键数据窗口中跟随选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））</span><br><span class="line">	3.调试的硬件断点跟随</span><br><span class="line">	4.F9-&gt;F8-&gt;F8</span><br><span class="line">	5.分析-&gt;从模块中删除分析</span><br><span class="line">	6.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）</span><br><span class="line"></span><br><span class="line">第二种：</span><br><span class="line">	1.HW break [ESP]  （Hardware break） F9-&gt;F8-&gt;F8</span><br><span class="line">	2.分析-&gt;从模块中删除分析</span><br><span class="line">	3.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                <h3 id="esp定律脱壳"><a href="#esp定律脱壳" class="headerlink" title="esp定律脱壳"></a>esp定律脱壳</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">第一种方法：</span><br><span class="line">	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的</span><br><span class="line">	2.esp右键数据窗口中跟随-&gt;选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））</span><br><span class="line">	3.调试-&gt;硬件断点-&gt;跟随</span><br><span class="line">	4.F9-&gt;F8-&gt;F8</span><br><span class="line">	5.分析-&gt;从模块中删除分析</span><br><span class="line">	6.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）</span><br><span class="line"></span><br><span class="line">第二种：</span><br><span class="line">	1.HW break [ESP]  （Hardware break） F9-&gt;F8-&gt;F8</span><br><span class="line">	2.分析-&gt;从模块中删除分析</span><br><span class="line">	3.右键ollydump脱壳调试进程（重建输入表一个，不重建输入表一个）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="灰鸽子木马专杀工具破解"><a href="#灰鸽子木马专杀工具破解" class="headerlink" title="灰鸽子木马专杀工具破解"></a>灰鸽子木马专杀工具破解</h3><p>esp定律脱壳拉od去</p>
+<p>下一个getfilesize的断点。然后f9运行<br><img src="1.jpg" alt="1.jpg"></p>
+<p>右键在反汇编窗口中跟随过去。F2下个断点<br><img src="2.jpg" alt="2.jpg"></p>
+<p>再去b模块（断点）里把自带的断点给删除了<br><img src="3.jpg" alt="3.jpg"></p>
+<p>f9运行起来之后就来到了getfilesize的断点之后。看到他有比较。在运行几次，看到跳转就把他nop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">加壳了的程序都会变小</span><br><span class="line">壳基本都有压缩功能</span><br><span class="line">他比较的c6c8其实就是文件未脱壳的大小了</span><br><span class="line">所以我们要把他比较之后的跳转nop了</span><br></pre></td></tr></table></figure>
+<p><img src="4.jpg" alt="4.jpg"></p>
+<hr>
+<p>另类脱壳<br>复制这里的修正大小<br><img src="5.jpg" alt="5.jpg"></p>
+<p>修正镜像大小-&gt;完整转存<br><img src="6.jpg" alt="6.jpg"></p>
+<p>import rec 打开<br>粘贴之前的大小，idt自动搜索-&gt;显示无效的-&gt;修正转储（之前转存的dump.exe）<br><img src="7.jpg" alt="7.jpg"></p>
 
-<h3 id="灰鸽子木马专杀工具破解"><a href="#灰鸽子木马专杀工具破解" class="headerlink" title="灰鸽子木马专杀工具破解"></a>灰鸽子木马专杀工具破解</h3>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -207,7 +218,7 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2022/01/11/esp%E5%AE%9A%E5%BE%8B%E5%8F%8A%E5%A4%A7%E5%B0%8F%E8%87%AA%E6%A0%A1%E9%AA%8C/";
             const title         = "「esp定律及大小自校验」";
-            const excerpt       = `esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调试的硬件断...`;
+            const excerpt       = `esp定律脱壳12345678910111213第一种方法：	1.第一行是pushed，且单步一次（f8）之后只有ESP是红的	2.esp右键数据窗口中跟随-&gt;选中开头的数据（随便多少）右键断点（硬件访问（三个都可以））	3.调...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -229,7 +240,7 @@
                         <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>, <a class="tag-none-link" href="/tags/shark%E6%81%92/" rel="tag">shark恒</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-01-11</span>
+                    <span>最后编辑：2022-01-13</span>
                     </div>
                 </div>
             </footer>
