@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/a.jpg">
+  <title>dll注入pvc修改阳光数 | Facker007's blog</title>
+  <meta name="author" content="Facker007" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="game-hack" />
+  
+  <meta name="description" content="指针小应用12345指针初始int *pointer;	pointer是地址	* pointer对应的就是地址指向的值 12345678910111213141516171819#include &lt;stdio.h&gt;int main() &amp;#123;	int a[] &#x3D; &amp;#123; 0 &amp;#125;;	&#x2F;*for (int i &#x3D; 0; i &lt; 6; i++) &amp;#123;		a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dll注入pvc修改阳光数">
+<meta property="og:url" content="http://example.com/2022/01/14/dll%E6%B3%A8%E5%85%A5pvc%E4%BF%AE%E6%94%B9%E9%98%B3%E5%85%89%E6%95%B0/index.html">
+<meta property="og:site_name" content="Facker007&#39;s blog">
+<meta property="og:description" content="指针小应用12345指针初始int *pointer;	pointer是地址	* pointer对应的就是地址指向的值 12345678910111213141516171819#include &lt;stdio.h&gt;int main() &amp;#123;	int a[] &#x3D; &amp;#123; 0 &amp;#125;;	&#x2F;*for (int i &#x3D; 0; i &lt; 6; i++) &amp;#123;		a">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/a.jpg">
+<meta property="article:published_time" content="2022-01-14T09:11:00.000Z">
+<meta property="article:modified_time" content="2022-01-14T11:11:13.267Z">
+<meta property="article:author" content="Facker007">
+<meta property="article:tag" content="game-hack">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/a.jpg">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Facker007&#39;s blog</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Facker007&#39;s blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">dll注入pvc修改阳光数</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2022-01-14
+                        <i class="fa fa-folder"></i> 分类 
+                        <i class="fa fa-user"></i> 作者 Facker007
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            1143
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1642158673267"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                <hr />
+                <h3 id="指针小应用"><a href="#指针小应用" class="headerlink" title="指针小应用"></a>指针小应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">指针初始</span><br><span class="line"></span><br><span class="line">int *pointer;</span><br><span class="line">	pointer是地址</span><br><span class="line">	* pointer对应的就是地址指向的值</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="comment">/*for (int i = 0; i &lt; 6; i++) &#123;</span></span><br><span class="line"><span class="comment">		a[i] = i;</span></span><br><span class="line"><span class="comment">		printf(&quot;a[%d] = %d     address  =   0x%X  \n\n&quot;, i, a[i], &amp;a[i]);</span></span><br><span class="line"><span class="comment">	&#125;*/</span></span><br><span class="line">	<span class="comment">// 定义指针，指向a（数组的首地址）</span></span><br><span class="line">	<span class="keyword">int</span>  *pointer = a;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;pointer = 0x%x\n\n&quot;</span>, pointer);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 指针方法：给数组中6个数据循环赋值，打印地址</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++, pointer++) &#123;</span><br><span class="line">		*pointer = i;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;a[%d]=%d   address=0x%x\n\n&quot;</span>, i,*pointer, pointer);</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="dll注入pvc修改阳光数量"><a href="#dll注入pvc修改阳光数量" class="headerlink" title="dll注入pvc修改阳光数量"></a>dll注入pvc修改阳光数量</h3><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/win32/dlls/dllmain">dllmain入口点相关知识</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(DWORD*)转换成DWORD类型的指针</span><br><span class="line"></span><br><span class="line">* 在取出指针指向里面的值</span><br></pre></td></tr></table></figure>
+<p>基址为0x7578F8<br><img src="2.jpg" alt="2.jpg"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addsum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	DWORD addr = *(DWORD*)<span class="number">0x7578F8</span>;</span><br><span class="line">	DWORD addr1 = *(DWORD*)(addr + <span class="number">0x868</span>);</span><br><span class="line">	DWORD add2 = addr1 + <span class="number">0x5578</span>;</span><br><span class="line">	*(DWORD*)add2 = <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">BOOL WINAPI <span class="title">DllMain</span><span class="params">(HMODULE hDll, DWORD dwReason, LPVOID lpReserved)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (dwReason == DLL_PROCESS_ATTACH)</span><br><span class="line">	&#123;</span><br><span class="line">		DisableThreadLibraryCalls(hDll);</span><br><span class="line">		addsum();</span><br><span class="line">		MessageBoxA(<span class="number">0</span>, <span class="string">&quot;hack&quot;</span>, <span class="string">&quot;hack&quot;</span>, <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>生成之前一定一定要修改</strong><br><img src="3.jpg" alt="3.jpg"></p>
+<p>CE-&gt;查看内存-&gt;ctrl+i注入dll</p>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2022/01/14/dll%E6%B3%A8%E5%85%A5pvc%E4%BF%AE%E6%94%B9%E9%98%B3%E5%85%89%E6%95%B0/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2022/01/14/dll%E6%B3%A8%E5%85%A5pvc%E4%BF%AE%E6%94%B9%E9%98%B3%E5%85%89%E6%95%B0/";
+            const title         = "「dll注入pvc修改阳光数」";
+            const excerpt       = `指针小应用12345指针初始int *pointer;	pointer是地址	* pointer对应的就是地址指向的值
+12345678910111213141516171819#include &lt;stdio.h&gt;int ...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/game-hack/" rel="tag">game-hack</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2022-01-14</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" C遍历cs1.6房间人物" href="/2022/01/14/C遍历cs1-6房间人物/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 关键call和关键跳（eax决定）" href="/2022/01/14/关键call和关键跳（eax决定）/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/CE/" style="font-size: 0.63em;">CE</a> <a href="/tags/bugku/" style="font-size: 0.77em;">bugku</a> <a href="/tags/buuctf/" style="font-size: 0.63em;">buuctf</a> <a href="/tags/buuctf-misc/" style="font-size: 0.63em;">buuctf-misc</a> <a href="/tags/crypto/" style="font-size: 0.67em;">crypto</a> <a href="/tags/ctf-%E6%AF%94%E8%B5%9B%E5%90%88%E9%9B%86/" style="font-size: 0.63em;">ctf-比赛合集</a> <a href="/tags/game-hack/" style="font-size: 0.63em;">game-hack</a> <a href="/tags/misc/" style="font-size: 0.67em;">misc</a> <a href="/tags/noi-oj/" style="font-size: 0.6em;">noi-oj</a> <a href="/tags/pip%E6%BA%90-docker%E6%BA%90/" style="font-size: 0.6em;">pip源&docker源</a> <a href="/tags/pwn/" style="font-size: 0.67em;">pwn</a> <a href="/tags/re/" style="font-size: 0.8em;">re</a> <a href="/tags/shark%E6%81%92/" style="font-size: 0.7em;">shark恒</a> <a href="/tags/vulnhub/" style="font-size: 0.73em;">vulnhub</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" style="font-size: 0.6em;">关于我</a> <a href="/tags/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" style="font-size: 0.67em;">墨者学院</a> <a href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" style="font-size: 0.63em;">攻防世界</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B22021%E5%86%AC%E4%BB%A4%E8%90%A5/" style="font-size: 0.6em;">穿山甲2021冬令营</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/01/14/%E5%85%B3%E9%94%AEcall%E5%92%8C%E5%85%B3%E9%94%AE%E8%B7%B3%EF%BC%88eax%E5%86%B3%E5%AE%9A%EF%BC%89/"><i class="fa  fa-book"></i> 关键call和关键跳（eax决定）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/01/14/dll%E6%B3%A8%E5%85%A5pvc%E4%BF%AE%E6%94%B9%E9%98%B3%E5%85%89%E6%95%B0/"><i class="fa  fa-book"></i> dll注入pvc修改阳光数</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/01/14/C%E9%81%8D%E5%8E%86cs1-6%E6%88%BF%E9%97%B4%E4%BA%BA%E7%89%A9/"><i class="fa  fa-book"></i> C遍历cs1.6房间人物</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/01/11/esp%E5%AE%9A%E5%BE%8B%E5%8F%8A%E5%A4%A7%E5%B0%8F%E8%87%AA%E6%A0%A1%E9%AA%8C/"><i class="fa  fa-book"></i> esp定律及大小自校验</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/01/11/%E7%A0%B4%E8%A7%A3%E9%A3%9E%E6%89%AC%E8%8B%B1%E8%AF%AD%E4%B8%80%E7%82%B9%E9%80%9A/"><i class="fa  fa-book"></i> 破解飞扬英语一点通</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        <li><a href="mailto:1969434293@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/facker007"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 Facker007 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">浙ICP备2021004749号</a></li>
+                            <li><a href="http://www.beian.gov.cn" rel="external nofollow" target="_blank"><img src="/images/psr.webp" width="12" height="12">浙公网安备 33030402001126号</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="2498562945"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
