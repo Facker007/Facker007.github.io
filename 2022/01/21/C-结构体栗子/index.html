@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/a.jpg">
-  <title>bugku-re-First_Mobile | Facker007's blog</title>
+  <title>C-结构体栗子 | Facker007's blog</title>
   <meta name="author" content="Facker007" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,21 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="bugku, re" />
+    <meta name="keywords" content="game-hack" />
   
-  <meta name="description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
+  <meta name="description" content="结构体概念1234567891011121314151617&#x2F;&#x2F;  声明一个Monster名字的结构体，里面可以有许多其他类型的变量或者数组struct Monster&amp;#123;	&#x2F;&#x2F; 血量	float blood;	&#x2F;&#x2F; 数量	int num;	&#x2F;&#x2F; 等级	int level;	&#x2F;&#x2F; 坐标	fl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bugku-re-First_Mobile">
-<meta property="og:url" content="http://example.com/2021/06/25/bugku-re-First-Mobile/index.html">
+<meta property="og:title" content="C-结构体栗子">
+<meta property="og:url" content="http://example.com/2022/01/21/C-%E7%BB%93%E6%9E%84%E4%BD%93%E6%A0%97%E5%AD%90/index.html">
 <meta property="og:site_name" content="Facker007&#39;s blog">
-<meta property="og:description" content="直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查 跟到encode里 input是接收str转成的数组b是已经有的数组temp是空的16位的数组 在经过了运算之后temp[i]&#x3D;((input[i]+b[i])%61)*2-i如果temp和str还相等，就返回true，输出correct。   写个脚本这个脚本是直接跑的，把每一位依次比较，正确就转成字">
+<meta property="og:description" content="结构体概念1234567891011121314151617&#x2F;&#x2F;  声明一个Monster名字的结构体，里面可以有许多其他类型的变量或者数组struct Monster&amp;#123;	&#x2F;&#x2F; 血量	float blood;	&#x2F;&#x2F; 数量	int num;	&#x2F;&#x2F; 等级	int level;	&#x2F;&#x2F; 坐标	fl">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/a.jpg">
-<meta property="article:published_time" content="2021-06-25T05:35:00.000Z">
-<meta property="article:modified_time" content="2021-06-30T12:46:08.513Z">
+<meta property="article:published_time" content="2022-01-21T04:49:00.000Z">
+<meta property="article:modified_time" content="2022-01-21T04:52:15.886Z">
 <meta property="article:author" content="Facker007">
-<meta property="article:tag" content="re">
-<meta property="article:tag" content="bugku">
+<meta property="article:tag" content="game-hack">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/a.jpg">
 <meta name="twitter:site" content="@null">
@@ -115,17 +114,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">bugku-re-First_Mobile</h1>
+                <h1 class="kratos-entry-title text-center">C-结构体栗子</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-06-25
+                        <i class="fa fa-calendar"></i> 2022-01-21
                         <i class="fa fa-folder"></i> 分类 
                         <i class="fa fa-user"></i> 作者 Facker007
                         <i class="fa fa-edit"></i> 
                         
                         
-                            895
+                            ~2.23K
                         
                         字
                         
@@ -134,25 +133,13 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1625057168513"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1642740735886"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p>直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查<br><img src="1.png" alt="1.png" title="主函数mainactivity"></p>
-<p>跟到encode里</p>
-<p>input是接收str转成的数组<br>b是已经有的数组<br>temp是空的16位的数组</p>
-<p>在经过了运算之后temp[i]=((input[i]+b[i])%61)*2-i<br>如果temp和str还相等，就返回true，输出correct。</p>
-<p><img src="2.png" alt="2.png" title="encode函数"></p>
-<hr>
-<p>写个脚本<br>这个脚本是直接跑的，把每一位依次比较，正确就转成字母输出<br>这里的80可以往大里改，算是爆破出来的<br><a target="_blank" rel="noopener" href="https://hnightanimal.top/2019/06/24/My_first_andriod_reverse/">参见</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str1=[<span class="number">23</span>, <span class="number">22</span>, <span class="number">26</span>, <span class="number">26</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">25</span>, <span class="number">26</span>, <span class="number">27</span>, <span class="number">28</span>, <span class="number">30</span>, <span class="number">30</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">0x20</span>, <span class="number">0x20</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">80</span>):</span><br><span class="line">        <span class="keyword">if</span>((j+str1[i])%<span class="number">61</span>)*<span class="number">2</span>-i==j:</span><br><span class="line">            print(<span class="built_in">chr</span>(j),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+                <h3 id="结构体概念"><a href="#结构体概念" class="headerlink" title="结构体概念"></a>结构体概念</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  声明一个Monster名字的结构体，里面可以有许多其他类型的变量或者数组</span><br><span class="line">struct Monster</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F; 血量</span><br><span class="line">	float blood;</span><br><span class="line">	&#x2F;&#x2F; 数量</span><br><span class="line">	int num;</span><br><span class="line">	&#x2F;&#x2F; 等级</span><br><span class="line">	int level;</span><br><span class="line">	&#x2F;&#x2F; 坐标</span><br><span class="line">	float coordinate[3];</span><br><span class="line">	&#x2F;&#x2F; 名字</span><br><span class="line">	char name[10];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 定义a，实体化</span><br><span class="line">struct Monster a;</span><br></pre></td></tr></table></figure>
 
-<p><img src="3.png" alt="3.png" title="脚本跑出"></p>
-<hr>
-<p>另一种脚本的写法<br>也是爆破的，生成了所以的大小写和数字，一位一位爆破。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39563369/article/details/96991884">参见</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line">b = [ <span class="number">0x17</span>, <span class="number">0x16</span>,<span class="number">0x1a</span>,<span class="number">0x1a</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x19</span>,<span class="number">0x1a</span>,<span class="number">0x1b</span>,<span class="number">0x1c</span>,<span class="number">0x1e</span>,<span class="number">0x1e</span>,<span class="number">0x1d</span>,<span class="number">0x1e</span>,<span class="number">0x20</span>,<span class="number">0x20</span>]</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line">v6=<span class="number">16</span></span><br><span class="line">tmp=<span class="string">&quot;&quot;</span></span><br><span class="line">strall=string.ascii_letters+string.digits <span class="comment">#生成所有的大小写字符和数字。给下面循环中</span></span><br><span class="line"><span class="keyword">while</span> i&lt;v6:</span><br><span class="line">   <span class="keyword">for</span> a <span class="keyword">in</span> strall:</span><br><span class="line">       tmp1 = <span class="built_in">ord</span>(a)</span><br><span class="line">       tmp2 = ((<span class="built_in">ord</span>(a)+b[i])%(<span class="number">0x3d</span>))*<span class="number">2</span>-i    <span class="comment">#0x3d=十进制的61</span></span><br><span class="line">       <span class="keyword">if</span> tmp1==tmp2:</span><br><span class="line">           tmp+=a</span><br><span class="line">           i+=<span class="number">1</span></span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">continue</span></span><br><span class="line">print(tmp)</span><br></pre></td></tr></table></figure>
-<p><img src="4.png" alt="4.png" title="另一种方法的脚本跑出"></p>
-
+<h3 id="打怪的结构体实现的栗子"><a href="#打怪的结构体实现的栗子" class="headerlink" title="打怪的结构体实现的栗子"></a>打怪的结构体实现的栗子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明一个游戏中的怪物结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Monster</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="comment">// 血量</span></span><br><span class="line">	<span class="keyword">float</span> blood;</span><br><span class="line">	<span class="comment">// 数量</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="comment">// 等级</span></span><br><span class="line">	<span class="keyword">int</span> level;</span><br><span class="line">	<span class="comment">// 坐标</span></span><br><span class="line">	<span class="keyword">float</span> coordinate[<span class="number">3</span>];</span><br><span class="line">	<span class="comment">// 名字</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义a，实体化</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Monster</span> <span class="title">a</span>;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 怪物初始化函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitializationMonster</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	a.num = <span class="number">1</span>;</span><br><span class="line">	a.level = <span class="number">10</span>;</span><br><span class="line">	a.blood = <span class="number">100.0</span>;</span><br><span class="line">	a.coordinate[<span class="number">0</span>] = <span class="number">1.0</span>;</span><br><span class="line">	a.coordinate[<span class="number">1</span>] = <span class="number">2.0</span>;</span><br><span class="line">	a.coordinate[<span class="number">2</span>] = <span class="number">3.0</span>;</span><br><span class="line">	<span class="built_in">strcpy</span>(a.name, <span class="string">&quot;Monster1&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印怪物相关信息函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintMonster</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;怪物数量：%d------怪物坐标：%.2f , %.2f , %.2f------怪物等级：%d------怪物血量：%.2f------怪物名称：%s&quot;</span>,</span><br><span class="line">		a.num, a.coordinate[<span class="number">0</span>], a.coordinate[<span class="number">1</span>], a.coordinate[<span class="number">2</span>], a.level, a.blood, a.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Monster_attacked</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	a.blood -= <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	InitializationMonster();</span><br><span class="line">	PrintMonster();</span><br><span class="line">	<span class="comment">// 设置窗口标题</span></span><br><span class="line">	SetConsoleTitleA(<span class="string">&quot;Game V1.0&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;欢迎来到本游戏！本游戏将带你进行全新的体验！\n\n\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;初始化ing.&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">		Sleep(<span class="number">500</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	Sleep(<span class="number">2000</span>);</span><br><span class="line">	<span class="comment">// 初始化怪物数据</span></span><br><span class="line">	InitializationMonster();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\n\n初始化完成！！！\n\n\n-----------------------------------------------------------------------------------------------------------------\n\n\n\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;怪物结构体地址：0x%X \n\n&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;进入地图----[地狱之眼]:\n\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;发现怪物!血量是否进行攻击 (Y/N):&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">char</span> Getkey;</span><br><span class="line">		scanf_s(<span class="string">&quot;%c&quot;</span>, &amp;Getkey);</span><br><span class="line">		<span class="keyword">switch</span> (Getkey) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;Y&#x27;</span>:</span><br><span class="line">				<span class="keyword">do</span></span><br><span class="line">				&#123;</span><br><span class="line">					PrintMonster();</span><br><span class="line">					Monster_attacked();</span><br><span class="line">				&#125; <span class="keyword">while</span> (a.blood&gt;<span class="number">0</span>);</span><br><span class="line">				PrintMonster();</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n怪物已经死亡！获得经验：200 \n\n&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;N&#x27;</span>:</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;你取消了打怪！\n\n&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -205,7 +192,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/06/25/bugku-re-First-Mobile/",
+                text: "http://example.com/2022/01/21/C-%E7%BB%93%E6%9E%84%E4%BD%93%E6%A0%97%E5%AD%90/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -217,12 +204,9 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/06/25/bugku-re-First-Mobile/";
-            const title         = "「bugku-re-First_Mobile」";
-            const excerpt       = `直接反编译看mainactivity。监听，把输入的字符串传给encode.check()检查
-跟到encode里
-input是接收str转成的数组b是已经有的数组temp是空的16位的数组
-在经过了运算之后temp[i]=((inp...`;
+            const hostUrl       = "http://example.com/2022/01/21/C-%E7%BB%93%E6%9E%84%E4%BD%93%E6%A0%97%E5%AD%90/";
+            const title         = "「C-结构体栗子」";
+            const excerpt       = `结构体概念1234567891011121314151617&#x2F;&#x2F;  声明一个Monster名字的结构体，里面可以有许多其他类型的变量或者数组struct Monster&#123;	&#x2F;&#x2F; 血量	...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -241,10 +225,10 @@ input是接收str转成的数组b是已经有的数组temp是空的16位的数�
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/bugku/" rel="tag">bugku</a>, <a class="tag-none-link" href="/tags/re/" rel="tag">re</a>
+                        <a class="tag-none-link" href="/tags/game-hack/" rel="tag">game-hack</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-06-30</span>
+                    <span>最后编辑：2022-01-21</span>
                     </div>
                 </div>
             </footer>
@@ -253,12 +237,12 @@ input是接收str转成的数组b是已经有的数组temp是空的16位的数�
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" bugku-re-mobile1和mobile2" href="/2021/05/27/bugku-re-mobile1和mobile2/">&lt; 上一篇</a>
+                    <a title=" VBapi-tcMsgBox" href="/2022/01/19/VBapi-tcMsgBox/">&lt; 上一篇</a>
                 </div>
                 
                 
                 <div class="nav-next clearfix">
-                    <a title=" bugku-re-NoString" href="/2021/06/30/bugku-re-NoString/">下一篇 &gt;</a>
+                    <a title=" PE获取pid" href="/2022/01/23/PE获取pid/">下一篇 &gt;</a>
                 </div>
                 
             </nav>
